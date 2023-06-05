@@ -1,10 +1,23 @@
-import pandas as pd
+import pandas as pd 
 import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
 
-df = pd.read_csv("iris.csv" , sep=";")
-df.describe()
+iris = load_iris()
+data = pd.DataFrame(iris.data)
 
+data.head()
+data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
 
+# 0 = Iris-setosa 1 = Iris-versicolor 2 = Iris-virginica
+target = pd.DataFrame(iris.target)
+target = target.rename(columns = {0: 'target'})
+target.head()
+data = pd.concat([data, target], axis = 1)
+
+data.isnull().sum()
+
+x = data.iloc[:,0].values.reshape(-1,1)
+y = data.iloc[:,2].values.reshape(-1,1)
 
 plt.scatter(df.sepal_length,df.petal_length)
 plt.xlabel("sepal")
