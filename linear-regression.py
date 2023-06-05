@@ -19,7 +19,7 @@ data.isnull().sum()
 x = data.iloc[:,0].values.reshape(-1,1)
 y = data.iloc[:,2].values.reshape(-1,1)
 
-plt.scatter(df.sepal_length,df.petal_length)
+plt.scatter(data.sepal_length,data.petal_length)
 plt.xlabel("sepal")
 plt.ylabel("petal")
 plt.show()
@@ -29,8 +29,8 @@ from sklearn.linear_model import LinearRegression
 
 lr = LinearRegression()
 
-x = df.iloc[:,0].values.reshape(-1,1)
-y = df.iloc[:,2].values.reshape(-1,1)
+x = data.iloc[:,0].values.reshape(-1,1)
+y = data.iloc[:,2].values.reshape(-1,1)
 
 lr.fit(x,y)
 
