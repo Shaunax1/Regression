@@ -16,14 +16,6 @@ data = pd.concat([data, target], axis = 1)
 
 data.isnull().sum()
 
-x = data.iloc[:,0].values.reshape(-1,1)
-y = data.iloc[:,2].values.reshape(-1,1)
-
-plt.scatter(data.sepal_length,data.petal_length)
-plt.xlabel("sepal")
-plt.ylabel("petal")
-plt.show()
-
 #%%
 from sklearn.linear_model import LinearRegression
 
