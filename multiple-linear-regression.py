@@ -6,11 +6,6 @@ data.drop(["id"],axis=1)
 data["species"].replace(["Iris-setosa" , "Iris-versicolor" , "Iris-virginica"], [1,2,3])
 data.isnull().sum()
 
-#plot
-plt.scatter(data.sepal_length,data.petal_length)
-plt.xlabel("x")
-plt.ylabel("y")
-plt.show()
 
 from sklearn.linear_model import LinearRegression
 mlr = LinearRegression()
