@@ -1,6 +1,7 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
 
+data = pd.read_csv("/kaggle/input/iris/Iris.csv")
 data.columns =["id","sepal_length","sepal_width","petal_length","petal_width","species"]
 data.drop(["id"],axis=1)
 data.isnull().sum()
